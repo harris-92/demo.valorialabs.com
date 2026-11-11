@@ -1,5 +1,13 @@
+# Used when the Netlify package directory is apps/web.
+# Paths are relative to the repository root, which stays the base
+# directory so pnpm can install the workspace.
+
 [build]
   command = "pnpm --filter web build"
+  publish = "apps/web/.next"
 
 [build.environment]
   NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

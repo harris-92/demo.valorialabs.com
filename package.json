@@ -10,6 +10,7 @@
     "typecheck": "turbo typecheck"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.16.6",
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
     "prettier": "^3.9.10",

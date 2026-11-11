@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@netlify/plugin-nextjs':
+        specifier: ^5.16.6
+        version: 5.16.6
       '@workspace/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
@@ -1088,6 +1091,10 @@ packages:
   '@modelcontextprotocol/server@2.4.0':
     resolution: {integrity: sha512-rgR9yxSaAJ+bcsi/XroT/S2AfPiIWloXAnrdfYSCms9ivVju0ishu/wW0J21Ho6+ZOR1r7RyeRbjiRuF87ix5Q==}
     engines: {node: '>=20'}
+
+  '@netlify/plugin-nextjs@5.16.6':
+    resolution: {integrity: sha512-BXy5WhogsaQOKz+C+KMlWrQupdGkV1a6TmJ6RLF6RwUMz6Oi419RejMD8yB8ttBKqImQDkOE4MmNLx3uEEKxPw==}
+    engines: {node: '>=18.0.0'}
 
   '@next/env@16.4.4':
     resolution: {integrity: sha512-6/3ZuELR0tPLgNigvv8d/LAmfLIo1IpNfvrI/AHCAl9w9D0DNVGQGvo+OLPzAWR+WMW3vVyO7HaW0kfL97huBg==}
@@ -3535,6 +3542,8 @@ snapshots:
     dependencies:
       '@modelcontextprotocol/core': 2.4.0
       zod: 4.6.7
+
+  '@netlify/plugin-nextjs@5.16.6': {}
 
   '@next/env@16.4.4': {}
 

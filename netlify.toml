@@ -1,0 +1,13 @@
+# Netlify reads this file from the repository root when no package
+# directory is set. Install stays at the workspace root, where the
+# pnpm lockfile lives. The publish path is the Next.js build output.
+
+[build]
+  command = "pnpm --filter web build"
+  publish = "apps/web/.next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
