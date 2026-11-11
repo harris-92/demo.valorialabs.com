@@ -1,0 +1,399 @@
+@import "@fontsource-variable/montserrat";
+@import "@fontsource/lato/400.css";
+@import "@fontsource/lato/700.css";
+
+.maverick-epoxy-demo #other-services,
+.maverick-epoxy-demo #locations,
+.maverick-epoxy-demo #gallery,
+.maverick-epoxy-demo #reviews,
+.maverick-epoxy-demo #faq,
+.maverick-epoxy-demo #contact {
+  scroll-margin-top: 5.5rem;
+}
+
+.maverick-epoxy-demo #about {
+  scroll-margin-top: 5.5rem;
+  --me-about-bg: var(--me-navy);
+  --me-about-text: var(--me-white);
+  --me-about-muted: color-mix(in srgb, var(--me-white) 80%, transparent);
+  --me-about-card: color-mix(in srgb, var(--me-white) 8%, transparent);
+  --me-about-card-hover: color-mix(in srgb, var(--me-white) 14%, transparent);
+  --me-about-card-border: color-mix(in srgb, var(--me-white) 16%, transparent);
+  --me-about-icon-bg: color-mix(in srgb, var(--me-white) 8%, transparent);
+  --me-about-bar-bg: color-mix(in srgb, var(--me-white) 8%, transparent);
+  --me-about-bar-text: var(--me-white);
+  --me-about-bar-muted: color-mix(in srgb, var(--me-white) 80%, transparent);
+  --me-about-bar-border: color-mix(in srgb, var(--me-white) 16%, transparent);
+  background: var(--me-about-bg);
+  color: var(--me-about-text);
+}
+
+/* Stored light About treatment. Add data-theme="light" on #about to use it. */
+.maverick-epoxy-demo #about[data-theme='light'] {
+  --me-about-bg: var(--me-white);
+  --me-about-text: var(--me-text);
+  --me-about-muted: color-mix(in srgb, var(--me-text) 80%, transparent);
+  --me-about-card: color-mix(in srgb, var(--me-navy) 5%, transparent);
+  --me-about-card-hover: var(--me-white);
+  --me-about-card-border: transparent;
+  --me-about-icon-bg: color-mix(in srgb, var(--me-navy) 5%, transparent);
+  --me-about-bar-bg: var(--me-navy);
+  --me-about-bar-text: var(--me-white);
+  --me-about-bar-muted: color-mix(in srgb, var(--me-white) 80%, transparent);
+  --me-about-bar-border: transparent;
+}
+
+.maverick-epoxy-demo {
+  --me-primary: #d21f2b;
+  --me-primary-hover: #a81822;
+  --me-navy: #10182b;
+  --me-gold: #8eb4e8;
+  --me-white: #fffefe;
+  --me-text: #0a0f22;
+  --me-margin-mobile: 1.25rem;
+  --me-margin-desktop: 4rem;
+  --me-font-display: "Montserrat Variable", Montserrat, ui-sans-serif, system-ui, sans-serif;
+  --me-font-body: Lato, ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+  background: var(--me-navy);
+  color: var(--me-white);
+  font-family: var(--me-font-body);
+  overflow-x: clip;
+}
+
+.me-page-x {
+  padding-left: var(--me-margin-mobile);
+  padding-right: var(--me-margin-mobile);
+}
+
+@media (min-width: 768px) {
+  .me-page-x {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .me-page-x {
+    padding-left: var(--me-margin-desktop);
+    padding-right: var(--me-margin-desktop);
+  }
+}
+
+.me-hero-nav-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(8px, 1.5vw, 16px);
+  padding-block: clamp(8px, 1.4vw, 12px);
+  width: 100%;
+}
+
+.me-hero-nav-logo {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.me-hero-nav-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1vw, 10px);
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.me-hero-nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.me-hero-nav-link-pill {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  background: color-mix(in srgb, var(--me-gold) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--me-gold) 55%, transparent);
+  color: var(--me-white);
+  font-weight: 700;
+  font-size: clamp(11px, 1.2vw, 13px);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.me-hero-nav-link-pill:hover {
+  background: color-mix(in srgb, var(--me-gold) 42%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--me-gold) 35%, transparent);
+}
+
+.me-hero-nav-link-pill:focus-visible {
+  outline: 2px solid var(--me-gold);
+  outline-offset: 2px;
+}
+
+.me-hero-nav-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 12px);
+}
+
+.me-hero-nav-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--me-gold) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--me-gold) 55%, transparent);
+  color: var(--me-white);
+  font-weight: 700;
+  font-size: clamp(12px, 1.3vw, 14px);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.me-hero-nav-phone:hover {
+  background: color-mix(in srgb, var(--me-gold) 42%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--me-gold) 35%, transparent);
+}
+
+.me-hero-nav-phone:focus-visible {
+  outline: 2px solid var(--me-gold);
+  outline-offset: 2px;
+}
+
+.me-hero-nav-quote-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 8px 16px;
+  background: var(--me-primary);
+  border: 1px solid color-mix(in srgb, var(--me-primary) 80%, var(--me-white));
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--me-primary) 45%, transparent);
+  font-weight: 700;
+  font-size: clamp(11px, 1.3vw, 14px);
+  color: var(--me-white);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.me-hero-nav-quote-btn:hover {
+  background: var(--me-primary-hover);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--me-primary) 50%, transparent);
+}
+
+.me-hero-nav-quote-btn:active {
+  transform: scale(0.98);
+}
+
+.me-hero-nav-quote-btn:focus-visible {
+  outline: 2px solid var(--me-white);
+  outline-offset: 2px;
+}
+
+.me-hero-nav-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--me-gold) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--me-gold) 55%, transparent);
+  color: var(--me-white);
+  cursor: pointer;
+}
+
+.me-hero-nav-menu-btn:hover {
+  background: color-mix(in srgb, var(--me-gold) 42%, transparent);
+}
+
+.me-hero-nav-menu-btn:focus-visible {
+  outline: 2px solid var(--me-gold);
+  outline-offset: 2px;
+}
+
+@media (max-width: 639px) {
+  .me-hero-nav-quote-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  .me-hero-nav-links {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .me-hero-nav-menu-btn {
+    display: none;
+  }
+}
+
+.me-hero-nav-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  padding: 5.5rem var(--me-margin-mobile) var(--me-margin-mobile);
+  background: color-mix(in srgb, var(--me-navy) 72%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.me-hero-nav-mobile-panel {
+  max-height: min(70vh, calc(100dvh - 6.5rem));
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--me-navy) 92%, black);
+  border: 1px solid color-mix(in srgb, var(--me-gold) 45%, transparent);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+
+.me-hero-nav-mobile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.me-hero-nav-mobile-link {
+  display: block;
+  border-radius: 9999px;
+  padding: 0.75rem 1rem;
+  background: color-mix(in srgb, var(--me-gold) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--me-gold) 55%, transparent);
+  color: var(--me-white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.me-hero-nav-mobile-link:hover {
+  background: color-mix(in srgb, var(--me-gold) 42%, transparent);
+}
+
+.me-hero-nav-mobile-link:focus-visible {
+  outline: 2px solid var(--me-gold);
+  outline-offset: 2px;
+}
+
+.me-glass-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  backdrop-filter: blur(28px) saturate(180%) brightness(1.08);
+  -webkit-backdrop-filter: blur(28px) saturate(180%) brightness(1.08);
+  border: 0;
+  text-shadow: 0 1px 10px rgba(33, 39, 55, 0.45);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.me-glass-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    radial-gradient(90% 120% at 18% -10%, rgba(255, 255, 255, 0.5), transparent 55%),
+    linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.18) 48%, transparent 60%);
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.me-glass-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.25) 40%,
+    rgba(197, 214, 232, 0.55) 65%,
+    rgba(255, 255, 255, 0.55)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+.me-glass-btn:hover {
+  transform: translateY(-2px);
+}
+
+.me-glass-btn:hover::before {
+  opacity: 1;
+}
+
+.me-glass-btn:focus-visible {
+  outline: 2px solid rgba(210, 31, 43, 0.9);
+  outline-offset: 3px;
+}
+
+.me-glass-btn--primary {
+  color: var(--me-white);
+  background: linear-gradient(135deg, rgba(210, 31, 43, 0.55), rgba(16, 24, 43, 0.22));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 0 14px rgba(255, 255, 255, 0.12),
+    inset 0 -10px 20px rgba(210, 31, 43, 0.28),
+    0 14px 44px -10px rgba(210, 31, 43, 0.55);
+}
+
+.me-glass-btn--primary:hover {
+  background: linear-gradient(135deg, rgba(210, 31, 43, 0.68), rgba(16, 24, 43, 0.24));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 0 18px rgba(255, 255, 255, 0.16),
+    inset 0 -10px 20px rgba(210, 31, 43, 0.34),
+    0 18px 52px -10px rgba(210, 31, 43, 0.68);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .me-glass-btn,
+  .me-glass-btn::before,
+  .me-hero-nav-quote-btn,
+  .me-hero-nav-phone {
+    transition: none;
+  }
+
+  .me-glass-btn:hover,
+  .me-hero-nav-quote-btn:active {
+    transform: none;
+  }
+}
