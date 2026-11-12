@@ -1,0 +1,321 @@
+.call-mike-demo {
+  --cmsr-surface: #111827;
+  --cmsr-surface-low: #1a2332;
+  --cmsr-surface-container: #1f2937;
+  --cmsr-surface-high: #374151;
+  --cmsr-surface-bright: #4b5563;
+  --cmsr-surface-lowest: #0b1220;
+  --cmsr-primary: #edcd1f;
+  --cmsr-primary-container: #edcd1f;
+  --cmsr-primary-fixed: #f6e48a;
+  --cmsr-glow: rgb(237 205 31 / 45%);
+  --cmsr-neutral: #f9fafb;
+  --cmsr-on-primary: #111827;
+  --cmsr-on-primary-container: #111827;
+  --cmsr-on-primary-fixed: #111827;
+  --cmsr-on-surface: #f9fafb;
+  --cmsr-on-surface-variant: #d1d5db;
+  --cmsr-outline: #6b7280;
+  --cmsr-error: #ffb4ab;
+  --cmsr-display: var(--font-cmsr-display), Montserrat, ui-sans-serif, system-ui, sans-serif;
+  --cmsr-body: var(--font-cmsr-body), Inter, ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--cmsr-surface);
+  color: var(--cmsr-on-surface);
+  color-scheme: dark;
+  font-family: var(--cmsr-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.call-mike-demo :where(a, button, input, select, textarea) {
+  font: inherit;
+}
+
+.call-mike-demo :where(.grid > *, .flex > *) {
+  min-width: 0;
+}
+
+.call-mike-demo :where(h1, h2, h3, p) {
+  overflow-wrap: break-word;
+}
+
+.call-mike-demo :where(#services, #locations, #why, #process, #showcase, #clients, #areas, #reviews, #estimator, #quote) {
+  scroll-margin-top: 7.5rem;
+}
+
+.cmsr-display {
+  font-family: var(--cmsr-display);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.cmsr-h1 {
+  font-family: var(--cmsr-display);
+  font-size: clamp(1.85rem, 4.6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.cmsr-h2 {
+  font-family: var(--cmsr-display);
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.cmsr-h3 {
+  font-family: var(--cmsr-display);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.cmsr-label {
+  font-family: var(--cmsr-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.cmsr-card,
+.cmsr-node {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--cmsr-primary) 28%, transparent);
+  border-radius: 0.9rem;
+  background: var(--cmsr-surface-high);
+  box-shadow: 0 18px 40px -24px rgb(0 0 0 / 70%);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.cmsr-card::before,
+.cmsr-node::before {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: 50%;
+  z-index: 2;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--cmsr-primary);
+  box-shadow: 0 0 0 4px rgb(237 205 31 / 16%), 0 0 14px var(--cmsr-glow);
+  transform: translateX(-50%);
+}
+
+.cmsr-card:hover,
+.cmsr-node:hover {
+  border-color: var(--cmsr-primary);
+  box-shadow: 0 0 0 1px var(--cmsr-primary), 0 0 28px rgb(237 205 31 / 22%);
+}
+
+.cmsr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--cmsr-primary-container);
+  color: var(--cmsr-on-primary-container);
+  font-family: var(--cmsr-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.cmsr-btn:hover {
+  background: var(--cmsr-primary-fixed);
+  color: var(--cmsr-on-primary-fixed);
+}
+
+.cmsr-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--cmsr-surface-high);
+  color: var(--cmsr-on-surface);
+  font-family: var(--cmsr-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.cmsr-btn-secondary:hover {
+  background: var(--cmsr-surface-bright);
+  color: var(--cmsr-primary);
+}
+
+.cmsr-field {
+  width: 100%;
+  border-radius: 0.25rem;
+  background: var(--cmsr-surface-container);
+  color: var(--cmsr-on-surface);
+  padding: 0.75rem;
+  outline: none;
+}
+
+.cmsr-field:focus {
+  box-shadow: 0 0 0 1px var(--cmsr-primary);
+}
+
+.cmsr-field::placeholder {
+  color: color-mix(in srgb, var(--cmsr-on-surface-variant) 70%, transparent);
+}
+
+.call-mike-demo :where(section, header, footer) {
+  position: relative;
+}
+
+.call-mike-demo :where(section, header, footer)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, var(--cmsr-primary) 1px, transparent 1.4px);
+  background-size: 72px 72px;
+  opacity: 0.35;
+  animation: cmsr-drift 22s linear infinite;
+}
+
+#quote::before,
+#areas::before {
+  background-image:
+    radial-gradient(circle, var(--cmsr-primary) 1px, transparent 1.4px),
+    linear-gradient(115deg, transparent 46%, rgb(237 205 31 / 28%) 46% 47%, transparent 47%),
+    linear-gradient(65deg, transparent 62%, rgb(249 250 251 / 8%) 62% 63%, transparent 63%);
+  background-size: 72px 72px, 180px 120px, 220px 150px;
+}
+
+.call-mike-demo :where(section, header, footer) > * {
+  z-index: 1;
+}
+
+.call-mike-demo :where(section, header, footer) > :not(.absolute, .fixed, .sticky) {
+  position: relative;
+}
+
+section :is(.space-y-2, .space-y-3, .space-y-4, .max-w-2xl, .max-w-3xl) > .cmsr-label.text-\[var\(--cmsr-primary\)\]:not(:has(> span))::after {
+  content: "";
+  display: inline-block;
+  width: 2.25rem;
+  height: 1px;
+  margin-left: 0.65rem;
+  vertical-align: middle;
+  background: linear-gradient(90deg, var(--cmsr-primary), transparent);
+}
+
+.cmsr-frame {
+  background-image: radial-gradient(circle, var(--cmsr-primary) 1px, transparent 1.5px);
+  background-size: 72px 72px;
+  animation: cmsr-dots 22s linear infinite;
+}
+
+.cmsr-hero-scrim {
+  background:
+    linear-gradient(rgb(237 205 31 / 14%), rgb(237 205 31 / 14%)),
+    rgb(11 18 32 / 58%);
+}
+
+.cmsr-card:has(> .relative) > .relative:first-child {
+  overflow: hidden;
+  border-start-start-radius: inherit;
+  border-start-end-radius: inherit;
+}
+
+#estimator :is(.cmsr-display, input, .font-mono) {
+  font-variant-numeric: tabular-nums;
+}
+
+.cmsr-links {
+  --cmsr-gap: 1.5rem;
+}
+
+.cmsr-links-wide {
+  --cmsr-gap: 2rem;
+}
+
+.cmsr-links > .cmsr-card::after {
+  content: "";
+  position: absolute;
+  top: 1.7rem;
+  right: calc(var(--cmsr-gap) * -1);
+  z-index: 3;
+  width: var(--cmsr-gap);
+  height: 2px;
+  background: linear-gradient(90deg, var(--cmsr-primary), transparent);
+  transform-origin: left center;
+  animation: cmsr-flow 2.8s linear infinite;
+}
+
+.cmsr-links > .cmsr-card::after {
+  content: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cmsr-links-2 > .cmsr-card:not(:nth-child(2n))::after,
+  .cmsr-links-4 > .cmsr-card:not(:nth-child(2n))::after,
+  .cmsr-links-3 > .cmsr-card:not(:nth-child(2n))::after,
+  .cmsr-links-3-md > .cmsr-card:not(:nth-child(3n))::after {
+    content: "";
+  }
+}
+
+@media (min-width: 1024px) {
+  .cmsr-links-2 > .cmsr-card:not(:nth-child(2n))::after,
+  .cmsr-links-3 > .cmsr-card:not(:nth-child(3n))::after,
+  .cmsr-links-3-md > .cmsr-card:not(:nth-child(3n))::after,
+  .cmsr-links-4 > .cmsr-card:not(:nth-child(4n))::after {
+    content: "";
+  }
+}
+
+@keyframes cmsr-drift {
+  to {
+    background-position: 72px 36px, 180px 0, -40px 80px;
+  }
+}
+
+@keyframes cmsr-dots {
+  to {
+    background-position: 72px 36px, 0 0;
+  }
+}
+
+@keyframes cmsr-flow {
+  from {
+    opacity: 0.25;
+    transform: scaleX(0.4);
+    transform-origin: left center;
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .call-mike-demo :where(section, header, footer)::before,
+  .cmsr-frame,
+  .call-mike-demo :where(.animate-pulse, .animate-ping),
+  .cmsr-links > .cmsr-card::after {
+    animation: none;
+  }
+}

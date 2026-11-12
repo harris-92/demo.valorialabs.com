@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import CmsrDemoButton from "@/components/cmsr-demo-button"
 import { Button } from "@workspace/ui/components/button"
 
 export default function Page() {
@@ -9,13 +10,12 @@ export default function Page() {
         <div>
           <h1 className="font-medium">Project ready!</h1>
           <p>You may now add components and start building.</p>
-          <Button
-            className="mt-2"
-            nativeButton={false}
-            render={<Link href="/maverick-epoxy" />}
-          >
-            View my demo
-          </Button>
+          <div className="mt-2 flex flex-wrap gap-2">
+            <Button nativeButton={false} render={<Link href="/maverick-epoxy" />}>
+              View my demo
+            </Button>
+            <CmsrDemoButton />
+          </div>
         </div>
         <div className="font-mono text-xs text-muted-foreground">
           (Press <kbd>d</kbd> to toggle dark mode)
