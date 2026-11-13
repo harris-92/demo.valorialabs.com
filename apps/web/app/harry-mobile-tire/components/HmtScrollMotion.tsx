@@ -7,7 +7,7 @@ export default function HmtScrollMotion() {
     const root = document.querySelector('.hmt-page')
     if (!root) return
 
-    const cards = [...root.querySelectorAll('.hmt-card')]
+    const cards = [...root.querySelectorAll<HTMLElement>('.hmt-card')]
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduce) {
       for (const card of cards) card.classList.add('is-in')
