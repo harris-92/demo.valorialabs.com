@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import CmsrDemoButton from "@/components/cmsr-demo-button"
+import HmtDemoButton from "@/components/hmt-demo-button"
 import { Button } from "@workspace/ui/components/button"
 
 export default function Page() {
@@ -15,6 +16,7 @@ export default function Page() {
               View my demo
             </Button>
             <CmsrDemoButton />
+            <HmtDemoButton />
           </div>
         </div>
         <div className="font-mono text-xs text-muted-foreground">

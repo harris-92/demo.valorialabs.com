@@ -1,0 +1,297 @@
+.harry-tire-demo {
+  --hmt-on: #0b1b3a;
+  --hmt-on-variant: #3d5278;
+  --hmt-primary: #c2410c;
+  --hmt-primary-container: #f97316;
+  --hmt-on-primary: #341100;
+  --hmt-tertiary: #0f766e;
+  --hmt-tertiary-container: #0d9488;
+  --hmt-dot: #34d399;
+  --hmt-secondary: #1e3a5f;
+  --hmt-outline: rgb(255 255 255 / 72%);
+  --hmt-surface-lowest: rgb(255 255 255 / 62%);
+  --hmt-surface-low: rgb(255 255 255 / 38%);
+  --hmt-surface: rgb(255 255 255 / 48%);
+  --hmt-surface-high: rgb(255 255 255 / 55%);
+  --hmt-surface-highest: rgb(255 255 255 / 72%);
+  --hmt-surface-bright: rgb(255 255 255 / 84%);
+  --hmt-display: var(--font-hmt-display), Montserrat, ui-sans-serif, system-ui, sans-serif;
+  --hmt-body: var(--font-hmt-body), Inter, ui-sans-serif, system-ui, sans-serif;
+  --hmt-label: var(--font-hmt-label), "JetBrains Mono", ui-monospace, monospace;
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow-x: clip;
+  background:
+    radial-gradient(ellipse 48% 36% at 12% 8%, rgb(125 211 252 / 55%), transparent 62%),
+    radial-gradient(ellipse 42% 34% at 88% 16%, rgb(167 139 250 / 42%), transparent 60%),
+    linear-gradient(165deg, #e7f4ff 0%, #dbe7ff 46%, #efe9ff 100%);
+  color: var(--hmt-on);
+  color-scheme: light;
+  font-family: var(--hmt-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.harry-tire-demo::before,
+.harry-tire-demo::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  width: 36rem;
+  height: 36rem;
+  border-radius: 999px;
+  pointer-events: none;
+  filter: blur(36px);
+  animation: hmt-drift 22s ease-in-out infinite alternate;
+}
+
+.harry-tire-demo::before {
+  top: -8rem;
+  left: -8rem;
+  background: rgb(103 232 249 / 50%);
+}
+
+.harry-tire-demo::after {
+  right: -10rem;
+  bottom: 8%;
+  background: rgb(167 139 250 / 42%);
+  animation-duration: 28s;
+  animation-direction: alternate-reverse;
+}
+
+.harry-tire-demo > * {
+  position: relative;
+  z-index: 1;
+}
+
+.harry-tire-demo :where(a, button, input, select, textarea, summary) {
+  font: inherit;
+}
+
+.harry-tire-demo :where(.grid > *, .flex > *) {
+  min-width: 0;
+}
+
+.harry-tire-demo :where(h1, h2, h3, p) {
+  overflow-wrap: break-word;
+}
+
+.harry-tire-demo :where(#services, #seasonal, #emergency, #roadside, #areas, #gallery, #reviews, #faq, #contact, #dispatch) {
+  scroll-margin-top: 7.5rem;
+}
+
+.hmt-display {
+  font-family: var(--hmt-display);
+  letter-spacing: -0.02em;
+}
+
+.hmt-mono {
+  font-family: var(--hmt-label);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.hmt-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--hmt-tertiary);
+  font-family: var(--hmt-label);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.hmt-kicker::before {
+  content: "";
+  width: 1.4rem;
+  height: 2px;
+  background: var(--hmt-dot);
+  box-shadow: 0 0 10px var(--hmt-dot);
+}
+
+.hmt-h1 {
+  font-family: var(--hmt-display);
+  font-size: clamp(2.05rem, 4.6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.hmt-h2 {
+  font-family: var(--hmt-display);
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.hmt-glass,
+.hmt-card {
+  border: 1px solid rgb(255 255 255 / 72%);
+  background: rgb(255 255 255 / 46%);
+  box-shadow:
+    0 12px 32px rgb(37 99 235 / 10%),
+    inset 0 1px 0 rgb(255 255 255 / 85%);
+  backdrop-filter: blur(18px);
+}
+
+.hmt-card {
+  border-radius: 1rem;
+}
+
+.hmt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.7rem;
+  background: var(--hmt-primary-container);
+  color: var(--hmt-on-primary);
+  box-shadow: 0 8px 22px rgb(249 115 22 / 28%);
+  font-family: var(--hmt-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: filter 500ms ease, box-shadow 500ms ease;
+}
+
+.hmt-btn:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 12px 28px rgb(249 115 22 / 40%);
+}
+
+.hmt-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 0.7rem;
+  background: rgb(255 255 255 / 38%);
+  color: var(--hmt-on);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 80%);
+  backdrop-filter: blur(12px);
+  font-family: var(--hmt-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: background-color 500ms ease, box-shadow 500ms ease;
+}
+
+.hmt-btn-ghost:hover {
+  background: rgb(255 255 255 / 62%);
+  box-shadow:
+    0 8px 20px rgb(37 99 235 / 10%),
+    inset 0 1px 0 rgb(255 255 255 / 90%);
+}
+
+.hmt-field {
+  width: 100%;
+  border: 1px solid rgb(255 255 255 / 80%);
+  border-radius: 0.7rem;
+  background: rgb(255 255 255 / 55%);
+  color: var(--hmt-on);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 80%);
+  backdrop-filter: blur(12px);
+  padding: 0.75rem 0.85rem;
+  outline: none;
+}
+
+.hmt-field:focus {
+  border-color: var(--hmt-primary-container);
+  box-shadow: 0 0 0 3px rgb(249 115 22 / 18%);
+}
+
+.hmt-field::placeholder {
+  color: color-mix(in srgb, var(--hmt-on-variant) 70%, transparent);
+}
+
+.hmt-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 55%);
+  color: var(--hmt-secondary);
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+.hmt-faq summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.hmt-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .hmt-logo-copy {
+    display: none;
+  }
+}
+
+.hmt-menu {
+  scrollbar-width: none;
+}
+
+.hmt-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.hmt-page .hmt-card {
+  position: relative;
+  transition: transform 500ms ease, opacity 500ms ease, box-shadow 500ms ease;
+}
+
+.hmt-page.hmt-motion .hmt-card:not(.is-in) {
+  opacity: 0;
+  transform: translateY(1.5rem);
+}
+
+.hmt-page.hmt-motion .hmt-card[data-dir='up']:not(.is-in) {
+  transform: translateY(-1.5rem);
+}
+
+.hmt-page.hmt-motion .hmt-card.is-in:hover {
+  z-index: 2;
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 40px rgb(37 99 235 / 16%),
+    0 0 28px rgb(125 211 252 / 45%),
+    inset 0 1px 0 rgb(255 255 255 / 90%);
+}
+
+@keyframes hmt-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(2.5rem, 1.75rem, 0) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .harry-tire-demo :where(.animate-pulse),
+  .harry-tire-demo::before,
+  .harry-tire-demo::after {
+    animation: none;
+  }
+
+  .hmt-page .hmt-card,
+  .hmt-page.hmt-motion .hmt-card,
+  .hmt-page.hmt-motion .hmt-card:not(.is-in),
+  .hmt-page.hmt-motion .hmt-card.is-in:hover {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
