@@ -26,6 +26,7 @@ export const services: readonly {
   body: string
   points: readonly string[]
   price: string
+  tone?: 'navy'
 }[] = [
   {
     icon: 'home',
@@ -48,6 +49,7 @@ export const services: readonly {
       'Fixed binding written quote',
     ],
     price: 'Guaranteed Fixed Rates',
+    tone: 'navy',
   },
   {
     icon: 'truck',
@@ -70,6 +72,7 @@ export const services: readonly {
       'Wardrobe boxes for hanging clothes',
     ],
     price: 'Supplies Included Options',
+    tone: 'navy',
   },
   {
     icon: 'armchair',
@@ -92,6 +95,7 @@ export const services: readonly {
       'Certificate of Insurance (COI) on file',
     ],
     price: 'Commercial COI Provided',
+    tone: 'navy',
   },
 ]
 
