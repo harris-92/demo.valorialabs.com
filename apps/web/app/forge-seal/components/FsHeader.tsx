@@ -1,12 +1,59 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 
 import { FS_EMAIL, FS_PHONE_DISPLAY, FS_PHONE_TEL, navLinks } from '../lib/content'
 import FsIcon from './FsIcon'
 
+const THEME_KEY = 'forge-seal-theme'
+
+function applyFsTheme(light: boolean) {
+  const root = document.querySelector('.fs-skin')
+  if (!root) return
+  if (light) root.setAttribute('data-theme', 'light')
+  else root.removeAttribute('data-theme')
+  try {
+    localStorage.setItem(THEME_KEY, light ? 'light' : 'dark')
+  } catch {
+    // Storage can be blocked. The attribute still updates this visit.
+  }
+}
+
+function storedFsThemeIsLight() {
+  try {
+    return localStorage.getItem(THEME_KEY) === 'light'
+  } catch {
+    return false
+  }
+}
+
+function FsThemeSwitch({ light, onToggle }: { light: boolean; onToggle: () => void }) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={light}
+      aria-label="Light theme"
+      className="fs-theme-switch"
+      onClick={onToggle}
+    >
+      <span className="fs-theme-switch-label">Light</span>
+      <span className="fs-theme-switch-track" aria-hidden="true">
+        <span className="fs-theme-switch-thumb" />
+      </span>
+    </button>
+  )
+}
+
 export default function FsHeader() {
   const [open, setOpen] = useState(false)
+  const [light, setLight] = useState(false)
+
+  useLayoutEffect(() => {
+    const next = storedFsThemeIsLight()
+    applyFsTheme(next)
+    setLight(next)
+  }, [])
 
   useEffect(() => {
     const media = window.matchMedia('(min-width: 1536px)')
@@ -16,6 +63,12 @@ export default function FsHeader() {
     media.addEventListener('change', closeOnDesktop)
     return () => media.removeEventListener('change', closeOnDesktop)
   }, [])
+
+  function onToggleTheme() {
+    const next = !light
+    applyFsTheme(next)
+    setLight(next)
+  }
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--fs-line)] bg-[var(--fs-pitch)]">
@@ -29,11 +82,11 @@ export default function FsHeader() {
             <FsIcon name="clock" className="h-4 w-4 text-[var(--fs-orange)]" />
             Mon-Sat 7am - 7pm
           </span>
-          <a className="flex items-center gap-1.5 hover:text-white" href={`mailto:${FS_EMAIL}`}>
+          <a className="flex items-center gap-1.5 hover:text-[var(--fs-hover)]" href={`mailto:${FS_EMAIL}`}>
             <FsIcon name="mail" className="h-4 w-4 text-[var(--fs-orange)]" />
             {FS_EMAIL}
           </a>
-          <a className="flex items-center gap-1.5 hover:text-white" href={FS_PHONE_TEL}>
+          <a className="flex items-center gap-1.5 hover:text-[var(--fs-hover)]" href={FS_PHONE_TEL}>
             <FsIcon name="phone" className="h-4 w-4 text-[var(--fs-orange)]" />
             {FS_PHONE_DISPLAY}
           </a>
@@ -56,6 +109,7 @@ export default function FsHeader() {
               {link.label}
             </a>
           ))}
+          <FsThemeSwitch light={light} onToggle={onToggleTheme} />
         </nav>
         <a className="fs-btn fs-btn--line hidden shrink-0 px-3 py-2 text-xs 2xl:inline-flex" href={FS_PHONE_TEL}>
           Call {FS_PHONE_DISPLAY}
@@ -86,6 +140,7 @@ export default function FsHeader() {
               {link.label}
             </a>
           ))}
+          <FsThemeSwitch light={light} onToggle={onToggleTheme} />
           <a className="px-2 py-3 text-sm md:hidden" href={`mailto:${FS_EMAIL}`} onClick={() => setOpen(false)}>
             {FS_EMAIL}
           </a>

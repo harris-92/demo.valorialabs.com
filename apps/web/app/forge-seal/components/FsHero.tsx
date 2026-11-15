@@ -36,7 +36,7 @@ export default function FsHero() {
         </p>
         <p className="mt-4 inline-flex items-center gap-2 overflow-hidden rounded-3xl border border-[var(--fs-line)] bg-[var(--fs-surface)] px-3 py-1.5 text-sm">
           <FsIcon name="star" className="h-4 w-4 text-[var(--fs-orange)]" />
-          <span className="font-semibold text-white">4.9 / 5.0</span>
+          <span className="font-semibold text-[var(--fs-ink)]">4.9 / 5.0</span>
           <span className="text-[var(--fs-muted)]">(180+ Local Google Reviews)</span>
         </p>
         <h1 className="mt-5 max-w-3xl text-4xl sm:text-5xl lg:text-6xl">
@@ -78,8 +78,8 @@ export default function FsHero() {
             sizes="(min-width: 1024px) 46vw, calc(100vw - 2rem)"
             className="h-64 w-full object-cover sm:h-72"
           />
-          <figcaption className="absolute bottom-0 left-0 bg-black/70 px-4 py-3 text-sm">
-            <span className="fs-display block text-xs text-[var(--fs-orange)]">Live Finishing Showcase</span>
+          <figcaption className="absolute bottom-0 left-0 bg-black/70 px-4 py-3 text-sm text-[var(--fs-on-media)]">
+            <span className="fs-display block text-xs text-[var(--fs-orange-fill)]">Live Finishing Showcase</span>
             Simcoe County Project
           </figcaption>
         </figure>
@@ -100,7 +100,7 @@ export default function FsHero() {
                   aria-pressed={property === item.id}
                   className={`rounded-2xl border px-2 py-2 text-xs uppercase tracking-wide ${
                     property === item.id
-                      ? 'border-[var(--fs-orange)] bg-[var(--fs-orange)] text-[#1a0900]'
+                      ? 'border-[var(--fs-orange-fill)] bg-[var(--fs-orange-fill)] text-[var(--fs-on-orange)]'
                       : 'border-[var(--fs-line)]'
                   }`}
                   onClick={() => setProperty(item.id)}

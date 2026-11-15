@@ -29,7 +29,7 @@ export default function FsShowcase() {
                     sizes="(min-width: 1024px) 16vw, 50vw"
                     className="h-full min-h-48 w-full object-cover"
                   />
-                  <p className="fs-display absolute left-3 top-3 bg-black/70 px-2 py-1 text-xs text-[var(--fs-orange)]">After</p>
+                  <p className="fs-display absolute left-3 top-3 bg-black/70 px-2 py-1 text-xs text-[var(--fs-orange-fill)]">After</p>
                 </div>
               </div>
               <div className="p-4">
