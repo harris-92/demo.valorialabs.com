@@ -1,0 +1,35 @@
+[
+ {
+  "shape": "Photographic",
+  "theme": "editorial",
+  "axes": "light/display-condensed/chromatic-ember",
+  "hero": "Poster",
+  "nav": "masthead",
+  "footer": "mast",
+  "imagery": "photographs",
+  "photos": [
+   "forgeseal hero-driveway",
+   "generated finish-matte",
+   "generated finish-oil"
+  ],
+  "entry": "forge-seal",
+  "fingerprint": "poster-masthead-mast-statement-rows-steps",
+  "sections": [
+   "Hero",
+   "Statement",
+   "Rows",
+   "Steps",
+   "Showcase",
+   "Index",
+   "Form",
+   "Footer"
+  ],
+  "signature": "the matte emulsion beside the oil-based shine",
+  "waived": [
+   "28a"
+  ],
+  "prompt": "ForgeSeal Asphalt Maintenance editorial demo for homeowners, matte emulsion, call and quote",
+  "date": "2026-11-15",
+  "mode": "build"
+ }
+]
