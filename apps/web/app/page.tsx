@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+import ApDemoButton from "@/components/ap-demo-button"
+import CpmDemoButton from "@/components/cpm-demo-button"
 import CmsrDemoButton from "@/components/cmsr-demo-button"
 import EmtDemoButton from "@/components/emt-demo-button"
 import FsDemoButton from "@/components/fs-demo-button"
@@ -21,6 +23,8 @@ export default function Page() {
             <HmtDemoButton />
             <EmtDemoButton />
             <FsDemoButton />
+            <ApDemoButton />
+            <CpmDemoButton />
           </div>
         </div>
         <div className="font-mono text-xs text-muted-foreground">
