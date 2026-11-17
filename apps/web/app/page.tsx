@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import ApDemoButton from "@/components/ap-demo-button"
+import BdnDemoButton from "@/components/bdn-demo-button"
 import SdDemoButton from "@/components/sd-demo-button"
 import CpmDemoButton from "@/components/cpm-demo-button"
 import CmsrDemoButton from "@/components/cmsr-demo-button"
@@ -25,6 +26,7 @@ export default function Page() {
             <EmtDemoButton />
             <FsDemoButton />
             <ApDemoButton />
+            <BdnDemoButton />
             <SdDemoButton />
             <CpmDemoButton />
           </div>
