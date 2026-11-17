@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, HardHat } from 'lucide-react'
 
 import { services } from '../lib/content'
 import BdnImage from './BdnImage'
@@ -10,7 +10,7 @@ export default function BdnServices() {
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <p className="bdn-kicker">What we take on</p>
-            <h2 className="bdn-h2 mt-2">Construction management for commercial work</h2>
+            <h2 className="bdn-h2 mt-2">Construction management for commercial work In Canada</h2>
             <p className="mt-3 text-[var(--bdn-muted)]">
               From the first budget conversation through the day you open. Industrial, commercial, and institutional
               work across Southern Ontario.
@@ -44,7 +44,7 @@ export default function BdnServices() {
                   <ul className="mt-3 space-y-1.5 text-sm">
                     {service.points.map((point) => (
                       <li key={point} className="flex items-start gap-2">
-                        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[var(--bdn-accent)]" aria-hidden="true" />
+                        <HardHat className="mt-0.5 size-4 shrink-0 text-[var(--bdn-accent)]" aria-hidden="true" />
                         {point}
                       </li>
                     ))}
